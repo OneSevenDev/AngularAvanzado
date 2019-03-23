@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{ bienvenida }}</h1>
+    <button (click)='saludar()' class='btn btn-primary'>Haga click</button>
+  </div>
+  <div class="col-md-12" *ngIf='lista'>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Codigo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody *ngFor='let item of lista'>
+        <tr>
+          <th scope="row">{{item.codigo}}</th>
+          <td>{{item.nombre}}</td>
+          <td>{{item.precio}}</td>
+          <td><button class='btn btn-danger'>Accion</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

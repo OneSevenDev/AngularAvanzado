@@ -2,13 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ArituloComponent } from './maestras/aritulo/aritulo.component';
+import { GraficaComponent } from './comunes/grafica/grafica.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './comunes/header/header.component';
+import { ArticuloDetalleComponent } from './maestras/articulo-detalle/articulo-detalle.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArituloComponent,
+    GraficaComponent,
+    HeaderComponent,
+    ArticuloDetalleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
