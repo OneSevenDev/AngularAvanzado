@@ -7,7 +7,7 @@ import { ArticuloDetalleComponent } from './maestras/articulo-detalle/articulo-d
 const routes: Routes = [
     { path: 'articulo', component: ArituloComponent },
     { path: 'grafica', component: GraficaComponent },
-    { path: 'articulodetalle', component: ArticuloDetalleComponent }
+    { path: 'articulo/:id', component: ArticuloDetalleComponent }
 ];
 
 @NgModule({
