@@ -12,24 +12,37 @@ import { Articulo } from '../articulo.model';
 export class ArticuloDetalleComponent implements OnInit {
 
   codigo: number;
+  art: Articulo; // = { codigo: 0, nombre: '', precio: 0 };;
 
   constructor(
     private router: Router,
     // private location: Location,
     private activated: ActivatedRoute,
     private articuloService: ArticuloServices
-  ) { }
+  ) {
+    this.art = new Articulo(Articulo);
+   }
 
   ngOnInit() {
     this.activated.params.subscribe(dato => {
-      this.codigo = dato.id;
-      console.log(this.codigo);
+      this.codigo = Number(dato.id);
+      if (this.codigo !== 0) {
+        this.articuloService.recuperarArticulo(this.codigo).subscribe(req => {
+          this.art = req;
+          console.log(req);
+        });
+      }
     });
   }
 
   volverPagina() {
     this.router.navigate(['/articulo']);
     // this.location.back();
+  }
+
+  grabarNg(forma: any) {
+    console.log(forma);
+    console.log(this.art);
   }
 
   grabar() {
@@ -39,6 +52,9 @@ export class ArticuloDetalleComponent implements OnInit {
       precio: 4000
     };
     this.articuloService.agregarArticulo(art);
+    // this.articuloService.agregarArticuloWs(this.art).subscribe(req => {
+    //   console.log(req);
+    // });
     this.router.navigate(['/articulo']);
   }
 }

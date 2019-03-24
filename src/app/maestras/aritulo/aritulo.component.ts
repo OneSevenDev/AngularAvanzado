@@ -24,7 +24,11 @@ export class ArituloComponent implements OnInit {
     //   { codigo: 1, nombre: 'Laptop', precio: 4000 },
     //   { codigo: 2, nombre: 'Monitor', precio: 420 }
     // ];
-    this.lista = this.articuloServices.listarArticulo();
+    // this.lista = this.articuloServices.listarArticulo();
+    this.lista = null;
+    this.articuloServices.listartArticuloWs().subscribe( req => {
+      this.lista = req;
+    });
   }
 
   nuevo() {
