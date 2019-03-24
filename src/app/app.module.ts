@@ -10,6 +10,7 @@ import { ArticuloDetalleComponent } from './maestras/articulo-detalle/articulo-d
 import { PromesaComponent } from './maestras/promesa/promesa.component';
 import { RxjsComponent } from './maestras/rxjs/rxjs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     ArticuloDetalleComponent,
     PromesaComponent,
-    RxjsComponent
+    RxjsComponent,
+    ArticuloDataComponent
   ],
   imports: [
     BrowserModule,

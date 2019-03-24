@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 // import { Location } from '@angular/common';
 import { ArticuloServices } from '../articulo.services';
 import { Articulo } from '../articulo.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-articulo-detalle',
@@ -12,7 +13,7 @@ import { Articulo } from '../articulo.model';
 export class ArticuloDetalleComponent implements OnInit {
 
   codigo: number;
-  art: Articulo; // = { codigo: 0, nombre: '', precio: 0 };;
+  art: Articulo = { codigo: 0, nombre: '', precio: 0 };
 
   constructor(
     private router: Router,
@@ -20,7 +21,7 @@ export class ArticuloDetalleComponent implements OnInit {
     private activated: ActivatedRoute,
     private articuloService: ArticuloServices
   ) {
-    this.art = new Articulo(Articulo);
+    // this.art = new Articulo(Articulo);
    }
 
   ngOnInit() {
@@ -40,9 +41,28 @@ export class ArticuloDetalleComponent implements OnInit {
     // this.location.back();
   }
 
-  grabarNg(forma: any) {
-    console.log(forma);
-    console.log(this.art);
+  grabarNg(forma: NgForm) {
+    if (forma.valid) {
+      if (this.art.codigo === 0) {
+        this.articuloService.agregarArticuloWs(this.art).subscribe(
+          req => {
+            console.log(req);
+          },
+          err => {
+            console.log(err);
+          });
+      } else {
+        this.articuloService.actualizarArticuloWs(this.art).subscribe(
+          req => {
+            console.log(req);
+          },
+          err => {
+            console.log(err);
+          });
+      }
+    }
+    // console.log(forma);
+    // console.log(this.art);
   }
 
   grabar() {
@@ -52,9 +72,6 @@ export class ArticuloDetalleComponent implements OnInit {
       precio: 4000
     };
     this.articuloService.agregarArticulo(art);
-    // this.articuloService.agregarArticuloWs(this.art).subscribe(req => {
-    //   console.log(req);
-    // });
     this.router.navigate(['/articulo']);
   }
 }

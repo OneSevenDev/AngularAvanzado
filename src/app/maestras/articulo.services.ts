@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Articulo } from './articulo.model';
 import { Observable } from 'rxjs';
 
@@ -36,14 +36,25 @@ export class ArticuloServices {
     }
 
     agregarArticuloWs(art: Articulo): Observable<any> {
+        const strArt = JSON.stringify(art);
+        let header = new HttpHeaders();
+        header = header.set('Content-Type', 'application/json');
         return this.http.post(
             'http://localhost:52980/api/articulo/insertar',
-            {
-                params: new HttpParams()
-                    .append('codigo', String(art.codigo))
-                    .append('nombre', art.nombre)
-                    .append('precio', String(art.precio))
-            });
+            strArt,
+            { headers: header }
+            );
+    }
+
+    actualizarArticuloWs(art: Articulo): Observable<any> {
+        const strArt = JSON.stringify(art);
+        let header = new HttpHeaders();
+        header = header.set('Content-Type', 'application/json');
+        return this.http.put(
+            'http://localhost:52980/api/articulo/actualizar',
+            strArt,
+            { headers: header }
+            );
     }
 
     agregarArticulo(art: Articulo) {
