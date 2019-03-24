@@ -7,6 +7,8 @@ import { GraficaComponent } from './comunes/grafica/grafica.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './comunes/header/header.component';
 import { ArticuloDetalleComponent } from './maestras/articulo-detalle/articulo-detalle.component';
+import { PromesaComponent } from './maestras/promesa/promesa.component';
+import { RxjsComponent } from './maestras/rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ArticuloDetalleComponent } from './maestras/articulo-detalle/articulo-d
     ArituloComponent,
     GraficaComponent,
     HeaderComponent,
-    ArticuloDetalleComponent
+    ArticuloDetalleComponent,
+    PromesaComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,
