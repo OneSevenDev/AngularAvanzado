@@ -6,8 +6,10 @@ import { ArticuloDetalleComponent } from './maestras/articulo-detalle/articulo-d
 import { PromesaComponent } from './maestras/promesa/promesa.component';
 import { RxjsComponent } from './maestras/rxjs/rxjs.component';
 import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.component';
+import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccion.component';
 
 const routes: Routes = [
+    { path: 'login', component: InicioSeccionComponent },
     { path: 'articulo', component: ArituloComponent },
     { path: 'grafica', component: GraficaComponent },
     { path: 'articulo/:id', component: ArticuloDetalleComponent },

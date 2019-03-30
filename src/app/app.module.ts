@@ -11,6 +11,7 @@ import { PromesaComponent } from './maestras/promesa/promesa.component';
 import { RxjsComponent } from './maestras/rxjs/rxjs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.component';
+import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccion.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.co
     ArticuloDetalleComponent,
     PromesaComponent,
     RxjsComponent,
-    ArticuloDataComponent
+    ArticuloDataComponent,
+    InicioSeccionComponent
   ],
   imports: [
     BrowserModule,

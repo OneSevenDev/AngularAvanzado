@@ -1,0 +1,28 @@
+<div class="row">
+  <aside class="col-sm-4">
+    
+    <div class="card">
+      <article class="card-body">
+        <a href="" class="float-right btn btn-outline-primary">Sign up</a>
+        <h4 class="card-title mb-4 mt-1">Autenticar</h4>
+        <form #form="ngForm" (ngSubmit)="autenticar(form)">
+          <div class="form-group">
+            <label>Tu usuario</label>
+            <input name="login" class="form-control" placeholder="Email" type="text" [(ngModel)]="user.login">
+          </div> <!-- form-group// -->
+          <div class="form-group">
+            <a class="float-right" href="#">Forgot?</a>
+            <label>Tu clave</label>
+            <input name="clave" class="form-control" placeholder="******" type="password" [(ngModel)]="user.clave">
+          </div> <!-- form-group// -->
+        
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Validar </button>
+          </div> <!-- form-group// -->
+        </form>
+      </article>
+    </div> <!-- card.// -->
+
+  </aside> <!-- col.// -->
+ 
+</div>
