@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-grafica',
@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grafica.component.css']
 })
 export class GraficaComponent implements OnInit {
+  @Input() progreso: number;
+  @Input() titulo: string;
+  @Output() cambiaValor: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+    this.progreso = 0;
+    this.titulo = '';
+   }
 
   ngOnInit() {
   }
 
+  incrementar(cantidad: number) {
+    this.progreso += cantidad;
+    this.cambiaValor.emit(this.progreso);
+  }
+  cambiar() {
+    this.cambiaValor.emit(this.progreso);
+  }
 }

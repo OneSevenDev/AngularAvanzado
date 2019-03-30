@@ -12,6 +12,7 @@ import { RxjsComponent } from './maestras/rxjs/rxjs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.component';
 import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccion.component';
+import { ScrollComponent } from './maestras/scroll/scroll.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccio
     PromesaComponent,
     RxjsComponent,
     ArticuloDataComponent,
-    InicioSeccionComponent
+    InicioSeccionComponent,
+    ScrollComponent
   ],
   imports: [
     BrowserModule,

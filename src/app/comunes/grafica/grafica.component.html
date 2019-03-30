@@ -1,3 +1,18 @@
-<p>
-  grafica works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{titulo}}</h5>
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="incrementar(-5)">
+          -
+        </button>
+      </span>
+      <input type="number" class="form-control" name="progreso" [(ngModel)]="progreso" (ngModelChange)="cambiar()">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="incrementar(5)">
+          +
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
