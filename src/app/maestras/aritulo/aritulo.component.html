@@ -1,7 +1,10 @@
 <div class="row">
   <div class="col-md-12">
     <h1>{{ bienvenida }}</h1>
-    <button (click)='nuevo()' class="btn btn-primary">Nuevo</button>
+    <div class="btn-group btn-group-sm" role="group" aria-label="group">
+      <button (click)='nuevo()' class="btn btn-primary">Nuevo Html Temprate</button>
+      <button (click)='nuevoData()' class="btn btn-success">Nuevo Data Template</button>
+    </div>
   </div>
   <div class="col-md-12" *ngIf='lista'>
     <table class="table table-hover">
@@ -13,12 +16,17 @@
           <th scope="col">Acciones</th>
         </tr>
       </thead>
-      <tbody *ngFor='let item of lista'>
-        <tr>
+      <tbody>
+        <tr *ngFor='let item of lista'>
           <th scope="row">{{item.codigo}}</th>
           <td>{{item.nombre}}</td>
           <td>{{item.precio}}</td>
-          <td><button (click)='verDetalle(item.codigo)' class='btn btn-primary'>Editar</button></td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group" aria-label="group">
+              <button (click)='verDetalle(item.codigo)' class='btn btn-primary'>Editar Html</button>
+              <button (click)='verDetalleData(item.codigo)' class='btn btn-success'>Editar Data</button>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

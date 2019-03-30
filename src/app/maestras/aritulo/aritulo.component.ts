@@ -34,8 +34,14 @@ export class ArituloComponent implements OnInit {
   nuevo() {
     this.router.navigate(['/articulo', 0]);
   }
+  nuevoData() {
+    this.router.navigate(['/articulo-data', 0]);
+  }
 
   verDetalle(id: number) {
     this.router.navigate(['/articulo', id]);
+  }
+  verDetalleData(id: number) {
+    this.router.navigate(['/articulo-data', id]);
   }
 }
