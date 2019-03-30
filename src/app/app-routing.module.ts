@@ -7,10 +7,11 @@ import { PromesaComponent } from './maestras/promesa/promesa.component';
 import { RxjsComponent } from './maestras/rxjs/rxjs.component';
 import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.component';
 import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccion.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
     { path: 'login', component: InicioSeccionComponent },
-    { path: 'articulo', component: ArituloComponent },
+    { path: 'articulo', component: ArituloComponent, canActivate: [AuthGuard] },
     { path: 'grafica', component: GraficaComponent },
     { path: 'articulo/:id', component: ArticuloDetalleComponent },
     { path: 'articulo-data/:id', component: ArticuloDataComponent },
