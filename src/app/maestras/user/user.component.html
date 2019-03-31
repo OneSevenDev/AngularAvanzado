@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Mantenedor de Usuarios</h1>
+    <div class="btn-group btn-group-sm" role="group" aria-label="group">
+      <button (click)='nuevo()' class="btn btn-success">Nuevo</button>
+    </div>
+  </div>
+  <div class="col-md-12" *ngIf='lista'>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">login</th>
+          <th scope="col">nombre</th>
+          <th scope="col">imagen</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of lista'>
+          <th scope="row">{{item.login}}</th>
+          <td>{{item.nombrecompleto}}</td>
+          <td>{{item.rutaimagen}}</td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group" aria-label="group">
+              <button (click)='verdetalle()' class='btn btn-success'>Editar</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

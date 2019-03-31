@@ -9,6 +9,7 @@ import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.co
 import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccion.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ScrollComponent } from './maestras/scroll/scroll.component';
+import { UserComponent } from './maestras/user/user.component';
 
 const routes: Routes = [
     { path: 'login', component: InicioSeccionComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'articulo-data/:id', component: ArticuloDataComponent },
     { path: 'promesa', component: PromesaComponent },
     { path: 'scroll', component: ScrollComponent },
+    { path: 'user', component: UserComponent },
     { path: 'rxjs', component: RxjsComponent }
 ];
 
