@@ -14,6 +14,7 @@ import { ArticuloDataComponent } from './maestras/articulo-data/articulo-data.co
 import { InicioSeccionComponent } from './seguridad/inicio-seccion/inicio-seccion.component';
 import { ScrollComponent } from './maestras/scroll/scroll.component';
 import { UserComponent } from './maestras/user/user.component';
+import { UserDetailComponent } from './maestras/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UserComponent } from './maestras/user/user.component';
     ArticuloDataComponent,
     InicioSeccionComponent,
     ScrollComponent,
-    UserComponent
+    UserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -11,18 +11,20 @@
         <tr>
           <th scope="col">login</th>
           <th scope="col">nombre</th>
+          <th scope="col">tipo</th>
           <th scope="col">imagen</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor='let item of lista'>
-          <th scope="row">{{item.login}}</th>
-          <td>{{item.nombrecompleto}}</td>
-          <td>{{item.rutaimagen}}</td>
+          <th scope="row">{{item.user.login}}</th>
+          <td>{{item.user.nombrecompleto}}</td>
+          <td>{{item.tipousuario.nombre}}</td>
+          <td>{{item.user.rutaimagen}}</td>
           <td>
             <div class="btn-group btn-group-sm" role="group" aria-label="group">
-              <button (click)='verdetalle()' class='btn btn-success'>Editar</button>
+              <button (click)='verdetalle(item.user.idusuario)' class='btn btn-success'>Editar</button>
             </div>
           </td>
         </tr>
@@ -30,3 +32,4 @@
     </table>
   </div>
 </div>
+<app-user-detail *ngIf="idusuario" [idusuario]="idusuario" (operationComplete)="reloadList($event)"></app-user-detail>

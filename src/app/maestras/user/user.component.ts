@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
-import { Usuario } from 'src/app/services/user/user.model';
 
 @Component({
   selector: 'app-user',
@@ -8,21 +7,38 @@ import { Usuario } from 'src/app/services/user/user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  lista: Usuario[];
+  lista: any[];
+  idusuario: number;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private changeDetector: ChangeDetectorRef
     ) { }
 
   ngOnInit() {
-    this.userService.listar().subscribe(req => {
+    // this.userService.listar().subscribe(req => {
+    //   this.lista = req;
+    // });
+    this.changeDetector.detectChanges();
+    this.userService.listarConTipo().subscribe(req => {
       this.lista = req;
     });
   }
   nuevo() {
 
   }
-  verdetalle() {
-
+  verdetalle(idusuario: number) {
+    this.idusuario = idusuario;
+    this.changeDetector.detectChanges();
+  }
+  reloadList(isSuccess: boolean) {
+    if (isSuccess) {
+      this.userService.listarConTipo().subscribe(req => {
+        this.lista = req;
+      });
+      this.idusuario = undefined;
+    } else {
+      console.log('No se guardo el usuario');
+    }
   }
 }
